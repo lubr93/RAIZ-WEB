@@ -33,7 +33,6 @@
   line-height: 1;
   text-transform: uppercase;
   letter-spacing: 0;
-  max-width: 22ch;
   margin-bottom: var(--espacio-m);
 }
 .curso-hero-bajada{

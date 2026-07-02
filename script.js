@@ -356,7 +356,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
   /* ---------- 9. MICROINTERACCIÓN ORGÁNICA: hover en cards con leve "respiración" ---------- */
-  document.querySelectorAll('.card-oficio').forEach((card) => {
+  document.querySelectorAll('.card-oficio[data-organic-hover]').forEach((card) => {
     card.addEventListener('mouseenter', () => {
       card.style.setProperty('--rot', `${(Math.random() * 1.2 - 0.6).toFixed(2)}deg`);
       card.style.transform = `translateY(-8px) rotate(var(--rot))`;
@@ -443,6 +443,5 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
-
 
 
