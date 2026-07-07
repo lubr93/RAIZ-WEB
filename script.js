@@ -56,7 +56,110 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(runHeroAnimation, t + LOOP_PAUSE);
   }
 
-  runHeroAnimation();
+  if (words.length || bgs.length || finale) {
+    runHeroAnimation();
+  }
+
+  const chairViews = [
+    {
+      id: "front",
+      src: "assets/chair-front.png",
+      thumb: "assets/chair-front.png",
+      label: "Vista frontal"
+    },
+    {
+      id: "right",
+      src: "assets/chair-right.png",
+      thumb: "assets/chair-right.png",
+      label: "Perfil derecho"
+    },
+    {
+      id: "left",
+      src: "assets/chair-left.png",
+      thumb: "assets/chair-left.png",
+      label: "Perfil izquierdo"
+    }
+  ];
+
+  const raizHeroChair = document.querySelector('.raiz-hero__chair--active');
+  const raizHeroChairNext = document.querySelector('.raiz-hero__chair--next');
+  const raizHeroThumbs = document.querySelector('.raiz-hero__thumbs');
+  let vistaActiva = 'front';
+  let cambioEnCurso = false;
+
+  function precargarVistasHero() {
+    chairViews.forEach((view) => {
+      const imagen = new Image();
+      imagen.src = view.src;
+    });
+  }
+
+  function actualizarMiniaturasHero() {
+    if (!raizHeroThumbs) return;
+
+    raizHeroThumbs.querySelectorAll('.raiz-hero__thumb').forEach((button) => {
+      const activo = button.dataset.view === vistaActiva;
+      button.classList.toggle('is-active', activo);
+      button.setAttribute('aria-pressed', String(activo));
+    });
+  }
+
+  function cambiarVistaHero(view) {
+    if (!raizHeroChair || !raizHeroChairNext || cambioEnCurso || view.id === vistaActiva) return;
+
+    cambioEnCurso = true;
+    raizHeroChairNext.src = view.src;
+    raizHeroChairNext.classList.remove('is-entering');
+    raizHeroChair.classList.remove('is-exiting');
+
+    requestAnimationFrame(() => {
+      raizHeroChair.classList.add('is-exiting');
+      raizHeroChairNext.classList.add('is-entering');
+    });
+
+    window.setTimeout(() => {
+      raizHeroChair.src = view.src;
+      raizHeroChair.alt = view.label;
+      raizHeroChair.setAttribute('aria-label', view.label);
+      raizHeroChair.classList.remove('is-exiting');
+      raizHeroChairNext.classList.remove('is-entering');
+      raizHeroChairNext.src = view.src;
+      vistaActiva = view.id;
+      actualizarMiniaturasHero();
+      cambioEnCurso = false;
+    }, 350);
+  }
+
+  function renderizarMiniaturasHero() {
+    if (!raizHeroThumbs) return;
+
+    chairViews.forEach((view) => {
+      const button = document.createElement('button');
+      const img = document.createElement('img');
+
+      button.type = 'button';
+      button.className = 'raiz-hero__thumb';
+      button.dataset.view = view.id;
+      button.setAttribute('aria-label', view.label);
+
+      img.src = view.thumb;
+      img.alt = '';
+      img.loading = 'eager';
+      img.decoding = 'async';
+
+      button.appendChild(img);
+      button.addEventListener('click', () => cambiarVistaHero(view));
+      button.addEventListener('mouseenter', () => cambiarVistaHero(view));
+      raizHeroThumbs.appendChild(button);
+    });
+
+    actualizarMiniaturasHero();
+  }
+
+  if (raizHeroChair && raizHeroChairNext && raizHeroThumbs) {
+    precargarVistasHero();
+    renderizarMiniaturasHero();
+  }
 
   /* ---------- 1. MENÚ OFF-CANVAS ---------- */
   const menuToggle = document.querySelector('.menu-toggle');
@@ -523,4 +626,3 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
-

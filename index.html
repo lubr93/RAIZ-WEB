@@ -22,47 +22,26 @@
       RAÍZ
     </a>
     <button class="menu-toggle" type="button" aria-controls="siteMenu" aria-expanded="false">
-      <span>MENU</span>
+      <span>MENÚ</span>
     </button>
   </div>
 </header>
 
-<section class="hero" id="hero">
+<section class="raiz-hero" id="hero" aria-labelledby="raizHeroTitle">
+  <img class="raiz-hero__bg" src="assets/images/hero-background.jpg" alt="">
 
-  <div class="stage">
-
-    <div class="word-slide s1">
-      <div class="word-text">REDISEÑÁ<span class="dot"></span></div>
-      <div class="word-photo">
-        <img src="assets/hero-sillon-burdeos.png" alt="Sillón con tapizado tweed burdeos">
-      </div>
-    </div>
-
-    <div class="word-slide s2">
-      <div class="word-text">RENOVÁ<span class="dot"></span></div>
-      <div class="word-photo">
-        <img src="assets/hero-silla-rayas.png" alt="Silla con tapizado a rayas naranjas y rojas">
-      </div>
-    </div>
-
-    <div class="word-slide s3">
-      <div class="word-text">REUTILIZÁ<span class="dot"></span></div>
-      <div class="word-photo">
-        <img src="assets/hero-sillon-verde.png" alt="Sillón verde mid-century con patas de madera">
-      </div>
-    </div>
-
-    <div class="finale">
-      <div class="finale-logo">RAÍZ</div>
-      <div class="finale-kicker">DALE A TU PIEZA UNA SEGUNDA OPORTUNIDAD</div>
-      
-      
-    </div>
-
+  <div class="raiz-hero__content">
+    <h1 id="raizHeroTitle">RENOVÁ<br>REDISEÑÁ<br>REUTILIZÁ</h1>
+    <p class="raiz-hero__claim">Restauramos piezas con historia<br>para que sigan formando parte de la tuya</p>
+    <a href="#servicios" class="raiz-hero__btn">DESCUBRÍ MÁS</a>
   </div>
 
-  <a href="#historia" class="finale-cta hero-cta"><span>Descubrí más</span></a>
-
+  <div class="raiz-hero__chair-wrap">
+    <div class="raiz-hero__shadow"></div>
+    <img class="raiz-hero__chair raiz-hero__chair--active" src="assets/chair-front.png" alt="Sillón restaurado">
+    <img class="raiz-hero__chair raiz-hero__chair--next" src="assets/chair-front.png" alt="" aria-hidden="true">
+  </div>
+  <div class="raiz-hero__thumbs" aria-label="Seleccionar vista del sillón"></div>
 </section>
 
 <!-- ============================================================
@@ -120,23 +99,23 @@
 
       <!-- [MODIFICAR] Slide 1: texto de origen -->
       <article class="historia-slide activo">
-        <span class="ojo historia-eyebrow">01 — Historia</span>
-        <h2 class="titulo-display seccion-titulo">El oficio antes que la marca</h2>
-        <p>RAÍZ nació mucho antes de tener un nombre. Empezó aprendiendo técnicas, observando materiales y entendiendo cómo devolverle vida a piezas que parecían haber llegado a su final.</p>
+        <span class="ojo historia-eyebrow">ORIGEN</span>
+        <h2 class="titulo-display seccion-titulo">Un oficio aprendido pieza por pieza</h2>
+        <p>Empezamos restaurando muebles descartados, sin taller ni marca. Ahí aprendimos a diagnosticar antes de intervenir.</p>
       </article>
 
       <!-- [MODIFICAR] Slide 2: proceso de intervención -->
       <article class="historia-slide">
-        <span class="ojo historia-eyebrow">01 — Historia</span>
-        <h2 class="titulo-display seccion-titulo">Mirar antes de intervenir</h2>
-        <p>Cada mueble que llega pasa por el mismo filtro: ¿qué se conserva, qué se refuerza, qué se transforma? No hay receta única. Hay una pieza con su propia historia estructural, y una decisión que se toma recién después de leerla bien. Las manos hacen el resto.</p>
+        <span class="ojo historia-eyebrow">CRITERIO</span>
+        <h2 class="titulo-display seccion-titulo">Restaurar es una decisión, no un procedimiento</h2>
+        <p>Cada pieza define su propio proceso. No aplicamos una técnica única, elegimos la que esa pieza necesita.</p>
       </article>
 
       <!-- [MODIFICAR] Slide 3: resultado final -->
       <article class="historia-slide">
-        <span class="ojo historia-eyebrow">01 — Historia</span>
-        <h2 class="titulo-display seccion-titulo">Objetos que siguen contando</h2>
-        <p>El resultado no es una réplica de lo nuevo ni una momificación de lo viejo. Hoy restauramos lo que otros dan por perdido. No lo disfrazamos de nuevo. Dejamos ver lo que vivió, y le sumamos lo que todavía le queda por vivir.</p>
+        <span class="ojo historia-eyebrow">PRESENTE</span>
+        <h2 class="titulo-display seccion-titulo">UN MÉTODO PROPIO, REPLICABLE Y ENSEÑABLE</h2>
+        <p>Diagnóstico, reparación estructural y rediseño. El mismo proceso que aplicamos en el taller es el que enseñamos en nuestros cursos.</p>
       </article>
 
     </div>
@@ -201,7 +180,7 @@
     <div class="oficios-cabecera">
       <div>
         <span class="ojo seccion-eyebrow">03 — Nuestros cursos</span>
-        <h2 class="titulo-display seccion-titulo reveal">Taller de oficios</h2>
+        <h2 class="titulo-display seccion-titulo reveal">Aprendé el oficio</h2>
       </div>
       
       <p class="reveal">
@@ -496,7 +475,7 @@
   <nav class="site-menu__nav">
     <a href="index.html#hero" class="site-menu__link">Inicio</a>
     <a href="index.html#oficios" class="site-menu__link">Cursos</a>
-    <a href="muebles-capsula.html" class="site-menu__link">Muebles Cápsula</a>
+    <a href="index.html#capsula" class="site-menu__link">Muebles Cápsula</a>
     <a href="index.html#manifiesto" class="site-menu__link">Nosotros</a>
     <a href="index.html#contacto" class="site-menu__link">Contacto</a>
   </nav>
