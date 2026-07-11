@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const destino = document.querySelector(destinoId);
         if (destino) {
           evento.preventDefault();
-          const offset = 80; // alto aproximado del header fijo
+          const offset = destinoId === '#contacto' ? 0 : 80; // alto aproximado del header fijo
           const posicion = destino.getBoundingClientRect().top + window.scrollY - offset;
           window.scrollTo({ top: posicion, behavior: 'smooth' });
         }
@@ -415,6 +415,181 @@ document.addEventListener('DOMContentLoaded', () => {
   historiaDotBtns.forEach((dot, indice) => {
     dot.addEventListener('click', () => irASlideHistoria(indice));
   });
+
+  /* ---------- 9. MATERIALES: selector técnico de maderas ---------- */
+  const materials = [
+    {
+      id: 'roble-americano',
+      number: '01',
+      name: 'Roble americano',
+      image: '/assets/images/textures/roble-americano.png',
+      placeholderClass: 'material-placeholder--oak',
+      hardness: 'Alta',
+      origin: 'EE. UU.',
+      tone: 'Marrón dorado',
+      grain: 'Recta y marcada',
+      recommendedUse: 'Estructuras y mobiliario de uso diario',
+      description: 'Madera estable y resistente, ideal para estructuras que deben soportar peso y uso frecuente. Su veta definida aporta carácter sin perder sobriedad.'
+    },
+    {
+      id: 'nogal',
+      number: '02',
+      name: 'Nogal',
+      image: '/assets/images/textures/nogal.png',
+      placeholderClass: 'material-placeholder--walnut',
+      hardness: 'Media-alta',
+      origin: 'Europa y América',
+      tone: 'Marrón profundo',
+      grain: 'Ondulada y elegante',
+      recommendedUse: 'Muebles finos y detalles visibles',
+      description: 'Su tonalidad profunda y su dibujo natural la convierten en una madera especialmente valorada para piezas de presencia refinada.'
+    },
+    {
+      id: 'cedro',
+      number: '03',
+      name: 'Cedro',
+      image: '/assets/images/textures/cedro.png',
+      placeholderClass: 'material-placeholder--cedar',
+      hardness: 'Media',
+      origin: 'América',
+      tone: 'Rojizo cálido',
+      grain: 'Suave y uniforme',
+      recommendedUse: 'Interiores, respaldos y componentes livianos',
+      description: 'Ligero, aromático y estable. Se utiliza en sectores protegidos de la pieza y en trabajos donde se busca calidez visual.'
+    },
+    {
+      id: 'pino',
+      number: '04',
+      name: 'Pino',
+      image: '/assets/images/textures/pino.png',
+      placeholderClass: 'material-placeholder--pine',
+      hardness: 'Baja-media',
+      origin: 'Variable',
+      tone: 'Claro y amarillento',
+      grain: 'Visible y expresiva',
+      recommendedUse: 'Estructuras secundarias y refuerzos',
+      description: 'Una madera versátil y liviana, adecuada para componentes internos, refuerzos y restauraciones que requieren facilidad de trabajo.'
+    },
+    {
+      id: 'lapacho',
+      number: '05',
+      name: 'Lapacho',
+      image: '/assets/images/textures/lapacho.png',
+      placeholderClass: 'material-placeholder--lapacho',
+      hardness: 'Muy alta',
+      origin: 'Sudamérica',
+      tone: 'Marrón oscuro',
+      grain: 'Compacta',
+      recommendedUse: 'Refuerzos y componentes de alta exigencia',
+      description: 'Extremadamente resistente y denso. Se reserva para sectores que necesitan gran estabilidad, firmeza y durabilidad.'
+    }
+  ];
+
+  const materialVisual = document.getElementById('materialVisual');
+  const materialImage = document.getElementById('materialImage');
+  const materialVisualName = document.getElementById('materialVisualName');
+  const materialTabs = document.getElementById('materialTabs');
+  const materialPanel = document.getElementById('materialPanel');
+  const materialSpecs = document.getElementById('materialSpecs');
+  const materialDescription = document.getElementById('materialDescription');
+  let materialActivo = -1;
+
+  function crearSpecsMaterial(material) {
+    return [
+      ['Dureza', material.hardness],
+      ['Origen', material.origin],
+      ['Tono', material.tone],
+      ['Veta', material.grain],
+      ['Uso recomendado', material.recommendedUse]
+    ].map(([label, value]) => `
+      <div class="materiales__spec">
+        <dt>${label}</dt>
+        <dd>${value}</dd>
+      </div>
+    `).join('');
+  }
+
+  function cargarImagenMaterial(material) {
+    if (!materialImage) return;
+
+    materialImage.classList.remove('is-loaded');
+    materialImage.hidden = true;
+    materialImage.alt = `${material.name}, textura de madera`;
+    materialImage.onload = () => {
+      materialImage.hidden = false;
+      materialImage.classList.add('is-loaded');
+      if (materialVisual) materialVisual.classList.add('has-image');
+    };
+    materialImage.onerror = () => {
+      materialImage.classList.remove('is-loaded');
+      materialImage.hidden = true;
+      materialImage.removeAttribute('src');
+      if (materialVisual) materialVisual.classList.remove('has-image');
+    };
+    materialImage.src = material.image;
+  }
+
+  function actualizarMaterial(indice) {
+    const material = materials[indice];
+    if (!material || !materialVisual || !materialVisualName || !materialTabs || !materialSpecs || !materialDescription) return;
+    if (indice === materialActivo) return;
+
+    materialActivo = indice;
+    materialVisual.classList.add('is-changing');
+    if (materialPanel) materialPanel.classList.add('is-changing');
+
+    window.setTimeout(() => {
+      materialVisual.className = `materiales__visual ${material.placeholderClass}`;
+      materialVisualName.textContent = material.name;
+      materialSpecs.innerHTML = crearSpecsMaterial(material);
+      materialDescription.textContent = material.description;
+      cargarImagenMaterial(material);
+
+      materialTabs.querySelectorAll('[role="tab"]').forEach((tab, tabIndice) => {
+        const activo = tabIndice === materialActivo;
+        tab.setAttribute('aria-selected', activo ? 'true' : 'false');
+        tab.setAttribute('tabindex', activo ? '0' : '-1');
+      });
+      if (materialPanel) materialPanel.setAttribute('aria-labelledby', `material-tab-${material.id}`);
+
+      window.requestAnimationFrame(() => {
+        materialVisual.classList.remove('is-changing');
+        if (materialPanel) materialPanel.classList.remove('is-changing');
+      });
+    }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 120);
+  }
+
+  if (materialTabs && materialVisual && materialSpecs && materialDescription) {
+    materialTabs.innerHTML = materials.map((material, indice) => `
+      <button class="materiales__tab" type="button" role="tab" id="material-tab-${material.id}" aria-controls="materialPanel" aria-selected="${indice === 0 ? 'true' : 'false'}" tabindex="${indice === 0 ? '0' : '-1'}">
+        <span class="materiales__number">${material.number}</span>
+        <span class="materiales__tab-name">${material.name}</span>
+      </button>
+    `).join('');
+
+    const materialTabButtons = Array.from(materialTabs.querySelectorAll('[role="tab"]'));
+    materialTabButtons.forEach((button, indice) => {
+      button.addEventListener('click', () => actualizarMaterial(indice));
+      button.addEventListener('mouseenter', () => actualizarMaterial(indice));
+      button.addEventListener('focus', () => actualizarMaterial(indice));
+      button.addEventListener('keydown', (evento) => {
+        const ultimo = materials.length - 1;
+        let siguiente = null;
+
+        if (evento.key === 'ArrowDown' || evento.key === 'ArrowRight') siguiente = indice === ultimo ? 0 : indice + 1;
+        if (evento.key === 'ArrowUp' || evento.key === 'ArrowLeft') siguiente = indice === 0 ? ultimo : indice - 1;
+        if (evento.key === 'Home') siguiente = 0;
+        if (evento.key === 'End') siguiente = ultimo;
+
+        if (siguiente === null) return;
+        evento.preventDefault();
+        actualizarMaterial(siguiente);
+        materialTabButtons[siguiente].focus();
+      });
+    });
+
+    actualizarMaterial(0);
+  }
 
   /* ---------- 9. CARRUSEL MUEBLES CÁPSULA ---------- */
   const capsulaCards = Array.from(document.querySelectorAll('[data-capsula-card]'));

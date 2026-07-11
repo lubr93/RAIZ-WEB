@@ -23,6 +23,7 @@
     </a>
     <nav class="header-nav" aria-label="Navegación principal">
       <a href="index.html#oficios" class="header-nav__link">Cursos</a>
+      <a href="index.html#materiales" class="header-nav__link">Materiales</a>
       <a href="index.html#capsula" class="header-nav__link">Muebles Cápsula</a>
       <a href="index.html#manifiesto" class="header-nav__link">Nosotros</a>
       <a href="index.html#contacto" class="header-nav__link">Contacto</a>
@@ -252,12 +253,44 @@
 </section>
 
 <!-- ============================================================
+     MATERIALES — biblioteca técnica de maderas
+     ============================================================ -->
+<section class="seccion materiales" id="materiales" aria-labelledby="materialesTitulo">
+  <div class="envoltura materiales__inner">
+    <header class="materiales__header">
+      <span class="ojo seccion-eyebrow reveal">04 — Materiales</span>
+      <h2 class="titulo-display seccion-titulo reveal" id="materialesTitulo">La materia también cuenta su</h2>
+      <p class="materiales__intro reveal">Cada madera posee una identidad propia: una veta, una resistencia y una forma particular de envejecer.</p>
+    </header>
+
+    <div class="materiales__layout reveal">
+      <figure class="materiales__visual material-placeholder--oak" id="materialVisual">
+        <img class="materiales__image" id="materialImage" alt="" hidden>
+        <figcaption class="materiales__caption">
+          <span class="materiales__placeholder-label">Texture placeholder</span>
+          <strong id="materialVisualName">Roble americano</strong>
+        </figcaption>
+      </figure>
+
+      <div class="materiales__info" id="materialPanel" role="tabpanel" aria-live="polite">
+        <div class="materiales__tabs" id="materialTabs" role="tablist" aria-label="Seleccionar madera"></div>
+
+        <div class="materiales__details">
+          <dl class="materiales__specs" id="materialSpecs"></dl>
+          <p class="materiales__description" id="materialDescription"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
      MUEBLES CÁPSULA — galería de 6 proyectos restaurados
      ============================================================ -->
 <section class="seccion capsula" id="capsula">
   <div class="envoltura capsula-contenido">
     <div class="capsula-cabecera">
-      <span class="ojo seccion-eyebrow reveal">04 — Próximamente</span>
+      <span class="ojo seccion-eyebrow reveal">05 — Próximamente</span>
       <h2 class="titulo-display seccion-titulo reveal">Muebles cápsula</h2>
       <p class="capsula-bajada reveal">Un adelanto de lo que viene: una primera mirada a nuestra próxima línea de piezas únicas, ensambladas desde fragmentos que ya no tenían arreglo. Cada una, irrepetible.
     </div>
@@ -387,8 +420,7 @@
     <div class="cta-contacto__overlay"></div>
   </div>
   <div class="cta-contacto__form-panel">
-    <h2 class="titulo-display cta-contacto__titulo">RESTAURAMOS PIEZAS CON HISTORIA<br>PARA QUE SIGAN FORMANDO PARTE DE LA TUYA</h2>
-    <p class="cta-contacto__subtitulo">Mandanos los detalles de tu mueble y empezamos el diagnóstico</p>
+    <h2 class="titulo-display cta-contacto__titulo">MANDANOS LOS DETALLES DE TU MUEBLE<br>Y EMPEZAMOS EL DIAGNÓSTICO</h2>
     <form class="cta-contacto__form" id="form-contacto" novalidate>
       <div class="cta-contacto__campo">
         <label for="nombre">Nombre</label>
@@ -496,6 +528,7 @@
   <nav class="site-menu__nav">
     <a href="index.html#hero" class="site-menu__link">Inicio</a>
     <a href="index.html#oficios" class="site-menu__link">Cursos</a>
+    <a href="index.html#materiales" class="site-menu__link">Materiales</a>
     <a href="index.html#capsula" class="site-menu__link">Muebles Cápsula</a>
     <a href="index.html#manifiesto" class="site-menu__link">Nosotros</a>
     <a href="index.html#contacto" class="site-menu__link">Contacto</a>
