@@ -604,7 +604,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     'estructura-lateral': {
       title: 'Estructura lateral',
-      text: 'Panel de madera maciza. Se ve la veta: es la misma madera que sostiene todo el mueble.'
+      text: 'Panel de pino macizo. Aporta estabilidad y sostiene la estructura del mueble.'
     },
     suspension: {
       title: 'Suspensión',
@@ -617,9 +617,13 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   if (tapizadoSection) {
+    const tapizadoPanel = tapizadoSection.querySelector('#tapizadoPanel');
     const tapizadoPanelTitle = tapizadoSection.querySelector('#tapizadoPanelTitle');
     const tapizadoPanelText = tapizadoSection.querySelector('#tapizadoPanelText');
     const tapizadoMobileList = tapizadoSection.querySelector('.tapizado__mobile-list');
+    const tapizadoMedia = tapizadoSection.querySelector('.tapizado__media');
+    const tapizadoConnector = tapizadoSection.querySelector('.tapizado__connector');
+    let tapizadoActivo = '';
 
     if (tapizadoMobileList) {
       tapizadoMobileList.innerHTML = Object.entries(tapizadoLayers).map(([id, layer], index) => `
@@ -631,25 +635,73 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const tapizadoButtons = Array.from(tapizadoSection.querySelectorAll('[data-layer]'));
 
+    function actualizarConectorTapizado(layerId) {
+      if (!tapizadoMedia || !tapizadoPanel || !tapizadoConnector) return;
+
+      const activeButton = tapizadoSection.querySelector(`.hotspot[data-layer="${layerId}"]`);
+      if (!activeButton || window.matchMedia('(max-width: 760px)').matches) {
+        tapizadoConnector.style.setProperty('--connector-opacity', '0');
+        return;
+      }
+
+      const mediaRect = tapizadoMedia.getBoundingClientRect();
+      const dotRect = activeButton.getBoundingClientRect();
+      const panelRect = tapizadoPanel.getBoundingClientRect();
+      const dotX = dotRect.left + dotRect.width / 2 - mediaRect.left;
+      const dotY = dotRect.top + dotRect.height / 2 - mediaRect.top;
+      const panelOnRight = panelRect.left > dotRect.left;
+      const panelEdgeX = (panelOnRight ? panelRect.left : panelRect.right) - mediaRect.left;
+      const connectorX = panelOnRight ? dotX : panelEdgeX;
+      const width = Math.max(0, Math.abs(panelEdgeX - dotX));
+
+      tapizadoConnector.style.setProperty('--connector-scale', '0');
+      tapizadoConnector.style.setProperty('--connector-x', `${connectorX}px`);
+      tapizadoConnector.style.setProperty('--connector-y', `${dotY - 1}px`);
+      tapizadoConnector.style.setProperty('--connector-width', `${width}px`);
+      tapizadoConnector.style.setProperty('--connector-origin', panelOnRight ? '0 50%' : '100% 50%');
+      tapizadoConnector.style.setProperty('--connector-opacity', '1');
+      window.requestAnimationFrame(() => {
+        tapizadoConnector.style.setProperty('--connector-scale', '1');
+      });
+    }
+
     function activarTapizado(layerId) {
       const layer = tapizadoLayers[layerId];
       if (!layer || !tapizadoPanelTitle || !tapizadoPanelText) return;
+      if (layerId === tapizadoActivo) return;
 
-      tapizadoPanelTitle.textContent = layer.title;
-      tapizadoPanelText.textContent = layer.text;
+      const delay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 120;
+      const panelEstabaOculto = tapizadoPanel ? tapizadoPanel.hidden : false;
+      if (tapizadoPanel) {
+        tapizadoPanel.hidden = false;
+        if (!panelEstabaOculto) tapizadoPanel.classList.add('is-changing');
+      }
 
       tapizadoButtons.forEach((button) => {
         const activo = button.dataset.layer === layerId;
         button.classList.toggle('is-active', activo);
         button.setAttribute('aria-pressed', activo ? 'true' : 'false');
       });
+
+      window.setTimeout(() => {
+        tapizadoActivo = layerId;
+        tapizadoPanelTitle.textContent = layer.title;
+        tapizadoPanelText.textContent = layer.text;
+        if (tapizadoPanel) {
+          tapizadoPanel.dataset.layer = layerId;
+          tapizadoPanel.classList.remove('is-changing');
+        }
+        window.requestAnimationFrame(() => actualizarConectorTapizado(layerId));
+      }, panelEstabaOculto ? 0 : delay);
     }
 
     tapizadoButtons.forEach((button) => {
       button.addEventListener('click', () => activarTapizado(button.dataset.layer));
     });
 
-    activarTapizado('tapizado');
+    window.addEventListener('resize', () => {
+      if (tapizadoActivo) actualizarConectorTapizado(tapizadoActivo);
+    });
   }
 
   /* ---------- 9. CARRUSEL MUEBLES CÁPSULA ---------- */
