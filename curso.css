@@ -119,7 +119,7 @@
 }
 .curso-presentacion-grid p{
   font-family: var(--font-body);
-  font-size: 1.1rem;
+  font-size: var(--tam-bajada);
   color: var(--negro-suave);
 }
 
@@ -277,7 +277,7 @@
   font-weight: 600;
 }
 
-.curso-titulo-amplio{ margin-bottom: clamp(1.2rem, 2.2vw, 1.8rem); }
+.curso-titulo-amplio{ margin-bottom: 0; }
 .curso-titulo-compacto{ margin-bottom: var(--espacio-s); }
 
 /* ---------- TÍTULO COMPARTIDO — nuevas secciones ---------- */
@@ -291,7 +291,7 @@
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--naranja);
-  margin: 0 0 var(--espacio-m);
+  margin: 0 0 var(--espacio-s);
 }
 
 .seccion-titulo-f,
@@ -307,7 +307,7 @@
 
 .seccion-titulo-f + p,
 .curso-metodo .seccion-titulo + .curso-metodo-bajada{
-  margin-top: var(--espacio-m);
+  margin-top: var(--espacio-s);
 }
 
 /* ---------- PROCESO — 6 etapas ---------- */
@@ -428,6 +428,14 @@
 .capacidades{
   background: #461514;
   color: var(--color-hueso);
+}
+.capacidades-titulo{
+  display: grid;
+  gap: .12em;
+  line-height: 1.04;
+}
+.capacidades-titulo span{
+  display: block;
 }
 .capacidades-grid{
   display: grid;
@@ -854,7 +862,7 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--terracota);
-  margin-bottom: 1.25rem;
+  margin-bottom: var(--espacio-s);
 }
 
 .faq__title {
@@ -864,13 +872,13 @@
   font-size: clamp(2.2rem, 3.2vw, 3.4rem);
   line-height: 1.05;
   color: var(--nogal);
-  margin: 0 0 1.25rem;
+  margin: 0 0 var(--espacio-s);
   max-width: 14ch;
 }
 
 .faq__lead {
   font-family: "Inter", sans-serif;
-  font-size: 1rem;
+  font-size: var(--tam-bajada);
   line-height: 1.6;
   color: var(--oliva);
   max-width: 44ch;
