@@ -187,7 +187,12 @@
     <h2 class="seccion-titulo-f reveal">Antes y después</h2>
     <p class="casos-bajada reveal">El resultado de aplicar el proceso completo, pieza por pieza. <br>Trabajos de alumnos, de diagnóstico a terminación.<br></p>
 
-    <div class="casos-grid">
+    <div class="casos-carousel">
+      <button class="circulo-nav casos-flecha casos-flecha--prev" type="button" id="casosPrev" aria-label="Ver caso anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+
+      <div class="casos-grid" id="casosGrid">
       <article class="caso-card reveal" style="--i:0">
         <div class="caso-slider" data-before-after>
           <img class="caso-slider-img caso-slider-img--antes" src="assets/images/sillathonet1.png" alt="Silla thonet antes de la restauración" onerror="this.style.display='none'">
@@ -226,6 +231,17 @@
         </div>
         <p class="caso-caption">Sillón capitoné - Federico, grupo 2025</p>
       </article>
+      </div>
+
+      <button class="circulo-nav casos-flecha casos-flecha--next" type="button" id="casosNext" aria-label="Ver caso siguiente">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+
+    <div class="casos-dots" id="casosDots" aria-label="Seleccionar caso">
+      <button class="activo" type="button" data-indice="0" aria-label="Ver caso 1"></button>
+      <button type="button" data-indice="1" aria-label="Ver caso 2"></button>
+      <button type="button" data-indice="2" aria-label="Ver caso 3"></button>
     </div>
   </div>
 </section>
@@ -437,7 +453,7 @@
       </div>
     </div>
 
-    <p class="faq__footnote">¿Tenés otra duda sobre el curso? <a href="#contacto">Escribinos directamente</a>.</p>
+    <p class="faq__footnote">¿Tenés otra duda sobre el curso? <a href="#contacto">Escribinos directamente</a></p>
   </div>
 </section>
 

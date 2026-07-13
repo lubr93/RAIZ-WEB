@@ -1133,7 +1133,23 @@
 
 /* ---------- RESPONSIVE MOBILE ---------- */
 @media (max-width: 599px){
-  .curso-hero{ padding-top: 7.5rem; }
+  .curso-hero{
+    padding-top: 7.5rem;
+    background-position: 52% top;
+  }
+  .curso-hero-grid > div:first-child{
+    width: min(72vw, 22rem);
+    padding-right: 0;
+  }
+  .curso-hero-bajada{
+    max-width: 26ch;
+  }
+  .curso-hero-acciones{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: start;
+    gap: .75rem;
+  }
   .curso-hero-titulo,
   .cta-final .cta-final-titulo{ font-size: clamp(2.1rem, 8vw, 3.2rem); }
   .incluye-grid{ grid-template-columns: 1fr; }
@@ -1155,6 +1171,9 @@
     height: 2.25rem;
     flex-shrink: 0;
   }
+  .caso-caption{
+    text-align: center;
+  }
   .caso-slider{ aspect-ratio: 2/3; }
   .alumnos .seccion-titulo-f span{
     white-space: normal;
@@ -1175,6 +1194,10 @@
 }
 
 @media (max-width: 480px){
+  .faq__footnote a{
+    display: block;
+    width: fit-content;
+  }
   .curso-datos-rapidos{
     grid-template-columns: 1fr;
   }
