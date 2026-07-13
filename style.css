@@ -1677,7 +1677,7 @@ body.menu-abierto{
   max-width: 54rem;
   margin: .15rem auto 0;
   font-family: var(--font-body);
-  font-size: var(--tam-label);
+  font-size: var(--tam-boton);
   line-height: 1.45;
   color: color-mix(in srgb, var(--color-nogal) 54%, transparent);
   text-align: center;
