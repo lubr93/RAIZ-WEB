@@ -2354,10 +2354,24 @@ body.menu-abierto{
 
 @media (max-width: 599px){
   .oficios-grid{
-    grid-template-columns: 1fr;
+    display: flex;
+    grid-template-columns: none;
     gap: 1rem;
     width: 100%;
     max-width: 100%;
+    margin-inline: 0;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 0;
+    padding: 0 0 .35rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .oficios-grid::-webkit-scrollbar{ display: none; }
+  .oficios-grid .card-oficio{
+    flex: 0 0 100%;
+    scroll-snap-align: start;
   }
   .card-oficio-imagen{ aspect-ratio: 4 / 3; }
 }
@@ -2392,14 +2406,87 @@ body.menu-abierto{
     font-size: var(--tam-cuerpo);
   }
   .oficios-grid{
-    grid-template-columns: 1fr;
+    display: flex;
+    grid-template-columns: none;
     gap: 1rem;
     width: 100%;
     max-width: 100%;
+    margin-inline: 0;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 0;
+    padding: 0 0 .35rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
   }
-  .card-oficio-imagen{ aspect-ratio: 4 / 3; }
+  .oficios-grid::-webkit-scrollbar{ display: none; }
+  .oficios-grid .card-oficio{
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+  }
+  .oficios{
+    padding-block: 1.6rem 2rem;
+  }
+  .oficios-carousel{
+    position: relative;
+    width: 100%;
+    margin-inline: auto;
+    padding-bottom: 3rem;
+  }
+  .oficios-flecha{
+    position: absolute;
+    top: auto;
+    bottom: .18rem;
+    z-index: 4;
+    width: 2.65rem;
+    height: 2.65rem;
+    transform: none;
+  }
+  .oficios-flecha--prev{ left: 0; }
+  .oficios-flecha--next{ right: 0; }
+  .oficios-dots{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .45rem;
+    margin-top: -2rem;
+    margin-bottom: .95rem;
+  }
+  .oficios-dots button{
+    width: .48rem;
+    height: .48rem;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--color-hueso) 45%, transparent);
+    transition: width var(--t-rapida), background var(--t-rapida);
+  }
+  .oficios-dots button.activo{
+    width: 1.35rem;
+    background: var(--color-terracota);
+  }
+  .card-oficio-imagen{ aspect-ratio: 16 / 10; }
+  .card-oficio-cuerpo{
+    gap: .55rem;
+    padding: .95rem 1.05rem 1rem;
+  }
+  .card-oficio-estrellas{
+    font-size: .9rem;
+  }
+  .card-oficio-titulo{
+    font-size: 1.48rem;
+    line-height: 1;
+  }
   .card-oficio-descripcion{
-    font-size: var(--tam-boton);
+    font-size: .83rem;
+    line-height: 1.45;
+  }
+  .card-oficio-precio{
+    margin-top: .25rem;
+    padding: .35rem .6rem;
+    font-size: 1.05rem;
+  }
+  .card-oficio-enlace{
+    padding: .82em 1em;
   }
   .oficios-cabecera{ flex-direction: column; align-items: flex-start; gap: var(--espacio-s); }
   .capsula-grid{ grid-template-columns: 1fr 1fr; gap: var(--espacio-s) .6rem; }

@@ -604,9 +604,7 @@
 .caso-tag{ top: 1rem; bottom: auto; }
 .capacidades-grid{ grid-template-columns: repeat(4, 1fr); }
 .alumnos{
-  background:
-    linear-gradient(color-mix(in srgb, var(--color-hueso) 72%, transparent), color-mix(in srgb, var(--color-hueso) 72%, transparent)),
-    url("assets/images/textura-tapizado.jpeg") center / cover repeat;
+  background: var(--color-lila);
   overflow: hidden;
 }
 .alumnos .envoltura{
@@ -643,10 +641,13 @@
   animation: alumnos-marquee 25s linear infinite;
   will-change: transform;
 }
-.alumnos-marquee:has(.alumno-card:hover) .alumnos-track,
-.alumnos-marquee:focus-within .alumnos-track,
 .alumnos.alumnos--modal-abierto .alumnos-track{
   animation-play-state: paused;
+}
+@media (hover:hover) and (pointer:fine){
+  .alumnos-marquee:has(.alumno-card:hover) .alumnos-track{
+    animation-play-state: paused;
+  }
 }
 .alumno-card{
   display: flex;
@@ -710,8 +711,8 @@
 }
 .alumno-meta__avatar{
   flex: 0 0 auto;
-  width: 2.35rem;
-  height: 2.35rem;
+  width: 2.7rem;
+  height: 2.7rem;
   border-radius: 50%;
   overflow: hidden;
   background: var(--color-crudo);
