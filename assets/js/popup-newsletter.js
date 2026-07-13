@@ -8,45 +8,46 @@ document.addEventListener('DOMContentLoaded', () => {
   const mensaje = document.getElementById('popupNewsletterMsg');
   const RETRASO_MS = 4000;
 
-  let resuelto = false;
-  let disparado = false;
+  let popupConsumido = false;
   let temporizador = null;
 
   function abrirPopup() {
-    if (resuelto) return;
+    if (popupConsumido) return;
+    popupConsumido = true;
     popup.setAttribute('aria-hidden', 'false');
     document.body.classList.add('popup-newsletter-abierto');
   }
 
   function cerrarPopup() {
+    popupConsumido = true;
+    if (temporizador) {
+      window.clearTimeout(temporizador);
+      temporizador = null;
+    }
     popup.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('popup-newsletter-abierto');
   }
 
   if (cerrar) {
     cerrar.addEventListener('click', () => {
-      resuelto = true;
       cerrarPopup();
     });
   }
 
   if (descartar) {
     descartar.addEventListener('click', () => {
-      resuelto = true;
       cerrarPopup();
     });
   }
 
   popup.addEventListener('click', (evento) => {
     if (evento.target === popup) {
-      resuelto = true;
       cerrarPopup();
     }
   });
 
   document.addEventListener('keydown', (evento) => {
     if (evento.key === 'Escape' && popup.getAttribute('aria-hidden') === 'false') {
-      resuelto = true;
       cerrarPopup();
     }
   });
@@ -77,7 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (mensaje) {
           mensaje.textContent = '¡Listo! Ya sos parte del club.';
         }
-        resuelto = true;
         setTimeout(cerrarPopup, 1600);
       }, 900);
     });
@@ -86,8 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Dispara la cuenta regresiva apenas el usuario hace el primer scroll,
   // en vez de arrancar el timer con la carga de la página.
   window.addEventListener('scroll', () => {
-    if (disparado) return;
-    disparado = true;
+    if (popupConsumido || temporizador) return;
     temporizador = window.setTimeout(abrirPopup, RETRASO_MS);
   }, { passive: true, once: true });
 });
