@@ -323,52 +323,121 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---------- 8. CARRUSEL DE OFICIOS EN MOBILE (dots) ---------- */
+  /* ---------- 8. CARRUSEL DE OFICIOS EN MOBILE (flechas + dots) ---------- */
   const oficiosGrid = document.getElementById('oficiosGrid');
   const oficiosDots = document.getElementById('oficiosDots');
+  const oficiosPrev = document.getElementById('oficiosPrev');
+  const oficiosNext = document.getElementById('oficiosNext');
 
   if (oficiosGrid && oficiosDots) {
     const cards = oficiosGrid.querySelectorAll('.card-oficio');
     const dots = oficiosDots.querySelectorAll('button');
-    const esOficiosVertical = () => window.matchMedia('(max-width: 720px)').matches;
 
-    dots.forEach((dot) => {
-      dot.addEventListener('click', () => {
-        const indice = Number(dot.dataset.indice);
-        const card = cards[indice];
-        if (card) {
-          if (esOficiosVertical()) {
-            oficiosGrid.scrollTo({
-              top: card.offsetTop - oficiosGrid.offsetTop,
-              behavior: 'smooth'
-            });
-          } else {
-            oficiosGrid.scrollTo({
-              left: card.offsetLeft - oficiosGrid.offsetLeft,
-              behavior: 'smooth'
-            });
-          }
+    function irAOficioIndice(indice) {
+      const card = cards[indice];
+      if (!card) return;
+      oficiosGrid.scrollTo({
+        left: card.offsetLeft - oficiosGrid.offsetLeft,
+        behavior: 'smooth'
+      });
+    }
+
+    function indiceOficioCercano() {
+      let indiceCercano = 0;
+      let distanciaMinima = Infinity;
+      cards.forEach((card, indice) => {
+        const distancia = Math.abs(card.offsetLeft - oficiosGrid.scrollLeft);
+        if (distancia < distanciaMinima) {
+          distanciaMinima = distancia;
+          indiceCercano = indice;
         }
       });
+      return indiceCercano;
+    }
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => irAOficioIndice(Number(dot.dataset.indice)));
     });
+
+    if (oficiosPrev) {
+      oficiosPrev.addEventListener('click', () => {
+        const total = cards.length;
+        irAOficioIndice((indiceOficioCercano() - 1 + total) % total);
+      });
+    }
+    if (oficiosNext) {
+      oficiosNext.addEventListener('click', () => {
+        const total = cards.length;
+        irAOficioIndice((indiceOficioCercano() + 1) % total);
+      });
+    }
 
     // Actualiza el dot activo según el scroll del carrusel en mobile.
     let timeoutScroll;
     oficiosGrid.addEventListener('scroll', () => {
       clearTimeout(timeoutScroll);
       timeoutScroll = setTimeout(() => {
-        let indiceCercano = 0;
-        let distanciaMinima = Infinity;
-        cards.forEach((card, indice) => {
-          const distancia = esOficiosVertical()
-            ? Math.abs((card.offsetTop - oficiosGrid.offsetTop) - oficiosGrid.scrollTop)
-            : Math.abs(card.offsetLeft - oficiosGrid.scrollLeft);
-          if (distancia < distanciaMinima) {
-            distanciaMinima = distancia;
-            indiceCercano = indice;
-          }
-        });
+        const indiceCercano = indiceOficioCercano();
         dots.forEach((dot, indice) => dot.classList.toggle('activo', indice === indiceCercano));
+      }, 100);
+    }, { passive: true });
+  }
+
+  /* ---------- 8b. CARRUSEL DE CASOS "ANTES Y DESPUÉS" EN MOBILE (flechas + dots) ---------- */
+  const casosGrid = document.getElementById('casosGrid');
+  const casosDots = document.getElementById('casosDots');
+  const casosPrev = document.getElementById('casosPrev');
+  const casosNext = document.getElementById('casosNext');
+
+  if (casosGrid && casosDots) {
+    const casosCards = casosGrid.querySelectorAll('.caso-card');
+    const casosDotButtons = casosDots.querySelectorAll('button');
+
+    function irACasoIndice(indice) {
+      const card = casosCards[indice];
+      if (!card) return;
+      casosGrid.scrollTo({
+        left: card.offsetLeft - casosGrid.offsetLeft,
+        behavior: 'smooth'
+      });
+    }
+
+    function indiceCasoCercano() {
+      let indiceCercano = 0;
+      let distanciaMinima = Infinity;
+      casosCards.forEach((card, indice) => {
+        const distancia = Math.abs(card.offsetLeft - casosGrid.scrollLeft);
+        if (distancia < distanciaMinima) {
+          distanciaMinima = distancia;
+          indiceCercano = indice;
+        }
+      });
+      return indiceCercano;
+    }
+
+    casosDotButtons.forEach((dot) => {
+      dot.addEventListener('click', () => irACasoIndice(Number(dot.dataset.indice)));
+    });
+
+    if (casosPrev) {
+      casosPrev.addEventListener('click', () => {
+        const total = casosCards.length;
+        irACasoIndice((indiceCasoCercano() - 1 + total) % total);
+      });
+    }
+    if (casosNext) {
+      casosNext.addEventListener('click', () => {
+        const total = casosCards.length;
+        irACasoIndice((indiceCasoCercano() + 1) % total);
+      });
+    }
+
+    let timeoutScrollCasos;
+    casosGrid.addEventListener('scroll', () => {
+      clearTimeout(timeoutScrollCasos);
+      timeoutScrollCasos = setTimeout(() => {
+        const indiceCercano = indiceCasoCercano();
+        casosDotButtons.forEach((dot, indice) => dot.classList.toggle('activo', indice === indiceCercano));
       }, 100);
     }, { passive: true });
   }
@@ -758,6 +827,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (evento.key === 'ArrowRight') irACapsula(capsulaIndice + 1);
     });
   }
+
   /* ---------- 9. MICROINTERACCIÓN ORGÁNICA: hover en cards con leve "respiración" ---------- */
   document.querySelectorAll('.card-oficio[data-organic-hover]').forEach((card) => {
     card.addEventListener('mouseenter', () => {

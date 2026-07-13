@@ -166,12 +166,12 @@
 <section class="seccion manifiesto" id="manifiesto">
   <div class="envoltura">
     <div class="manifiesto-texto">
-      <span class="ojo manifiesto-eyebrow reveal">02 — Nuestra filosofía</span>
+      <span class="ojo manifiesto-eyebrow reveal">— Nuestra filosofía</span>
       <h2 class="titulo-display manifiesto-titulo reveal">RESTAURAMOS, REDISEÑAMOS Y REUTILIZAMOS<br><em> MUEBLES CON HISTORIA</em></h2>
       <p class="manifiesto-secundario reveal">Somos un taller especializado en darle una nueva vida a piezas que ya demostraron que funcionan. Ofrecemos un servicio completo — diagnóstico, reparación estructural y rediseño — para que cada mueble vuelva a tener lugar en tu casa, sin necesidad de producir algo nuevo desde cero. </p>
     </div>
     <figure class="manifiesto-card reveal">
-      <img src="assets/images/taller2.png" alt="Taller RAÍZ de restauración de muebles">
+      <img src="assets/images/taller2bis.png" alt="Taller RAÍZ de restauración de muebles">
     </figure>
   </div>
 </section>
@@ -183,7 +183,7 @@
   <div class="envoltura">
     <div class="oficios-cabecera">
       <div>
-        <span class="ojo seccion-eyebrow">03 — Nuestros cursos</span>
+        <span class="ojo seccion-eyebrow">— Nuestros cursos</span>
         <h2 class="titulo-display seccion-titulo reveal">Aprendé el oficio</h2>
       </div>
       
@@ -193,56 +193,72 @@
 </p>
     </div>
 
-    <div class="oficios-grid reveal-fila" id="oficiosGrid">
-      <!-- Card destacada -->
-      <article class="card-oficio card-oficio--destacado reveal" style="--i:0">
-        <div class="card-oficio-imagen">
-          <span class="card-oficio-badge card-oficio-badge--destacado">Destacado</span>
-          <img src="assets/images/curso1.png" alt="Restauración integral de un mueble de madera">
-        </div>
-        <div class="card-oficio-cuerpo">
-          <span class="card-oficio-numero">01</span>
-          <span class="card-oficio-estrellas" aria-label="5 estrellas">★★★★★</span>
-          <h3 class="card-oficio-titulo">Servicio integral de restauración</h3>
-          <p class="card-oficio-descripcion">Diagnóstico, intervención estructural, terminación y criterio estético para restaurar una pieza de principio a fin.</p>
-          <p class="card-oficio-precio">$120.000 ARS</p>
-          <a href="curso-restauracion.html" class="card-oficio-enlace">
-            <span>Ver más</span>
-          </a>
-        </div>
-      </article>
+    <div class="oficios-carousel">
+      <button class="circulo-nav oficios-flecha oficios-flecha--prev" type="button" id="oficiosPrev" aria-label="Ver curso anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
 
-      <article class="card-oficio reveal" style="--i:1">
-        <div class="card-oficio-imagen">
-          <img src="assets/images/curso2.png" alt="Manos tejiendo esterilla con fibras naturales">
-        </div>
-        <div class="card-oficio-cuerpo">
-          <span class="card-oficio-numero">02</span>
-          <span class="card-oficio-estrellas" aria-label="5 estrellas">★★★★★</span>
-          <h3 class="card-oficio-titulo">Esterilla y fibras naturales</h3>
-          <p class="card-oficio-descripcion">Técnicas de entramado, reparación y lectura material para piezas con fibras naturales.</p>
-          <p class="card-oficio-precio">$90.000 ARS</p>
-          <a href="#contacto" class="card-oficio-enlace">
-            <span>Ver más</span>
-          </a>
-        </div>
-      </article>
+      <div class="oficios-grid reveal-fila" id="oficiosGrid">
+        <!-- Card destacada -->
+        <article class="card-oficio card-oficio--destacado reveal" style="--i:0">
+          <div class="card-oficio-imagen">
+            <span class="card-oficio-badge card-oficio-badge--destacado">Destacado</span>
+            <img src="assets/images/curso1.png" alt="Restauración integral de un mueble de madera">
+          </div>
+          <div class="card-oficio-cuerpo">
+            <span class="card-oficio-numero">01</span>
+            <span class="card-oficio-estrellas" aria-label="5 estrellas">★★★★★</span>
+            <h3 class="card-oficio-titulo">Servicio integral de restauración</h3>
+            <p class="card-oficio-descripcion">Diagnóstico, intervención estructural, terminación y criterio estético para restaurar una pieza de principio a fin.</p>
+            <p class="card-oficio-precio">$120.000 ARS</p>
+            <a href="curso-restauracion.html" class="card-oficio-enlace">
+              <span>Ver más</span>
+            </a>
+          </div>
+        </article>
 
-      <article class="card-oficio reveal" style="--i:2">
-        <div class="card-oficio-imagen">
-          <img src="assets/images/curso3.png" alt="Rediseño contemporáneo de un mueble antiguo">
-        </div>
-        <div class="card-oficio-cuerpo">
-          <span class="card-oficio-numero">03</span>
-          <span class="card-oficio-estrellas" aria-label="5 estrellas">★★★★★</span>
-          <h3 class="card-oficio-titulo">Materiales & acabados</h3>
-          <p class="card-oficio-descripcion">Preparación de superficies, combinaciones de terminación y decisiones de color.</p>
-          <p class="card-oficio-precio">$75.000 ARS</p>
-          <a href="#contacto" class="card-oficio-enlace">
-            <span>Ver más</span>
-          </a>
-        </div>
-      </article>
+        <article class="card-oficio reveal" style="--i:1">
+          <div class="card-oficio-imagen">
+            <img src="assets/images/curso2.png" alt="Manos tejiendo esterilla con fibras naturales">
+          </div>
+          <div class="card-oficio-cuerpo">
+            <span class="card-oficio-numero">02</span>
+            <span class="card-oficio-estrellas" aria-label="5 estrellas">★★★★★</span>
+            <h3 class="card-oficio-titulo">Esterilla y fibras naturales</h3>
+            <p class="card-oficio-descripcion">Técnicas de entramado, reparación y lectura material para piezas con fibras naturales.</p>
+            <p class="card-oficio-precio">$90.000 ARS</p>
+            <a href="#contacto" class="card-oficio-enlace">
+              <span>Ver más</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="card-oficio reveal" style="--i:2">
+          <div class="card-oficio-imagen">
+            <img src="assets/images/curso3.png" alt="Rediseño contemporáneo de un mueble antiguo">
+          </div>
+          <div class="card-oficio-cuerpo">
+            <span class="card-oficio-numero">03</span>
+            <span class="card-oficio-estrellas" aria-label="5 estrellas">★★★★★</span>
+            <h3 class="card-oficio-titulo">Materiales & acabados</h3>
+            <p class="card-oficio-descripcion">Preparación de superficies, combinaciones de terminación y decisiones de color.</p>
+            <p class="card-oficio-precio">$75.000 ARS</p>
+            <a href="#contacto" class="card-oficio-enlace">
+              <span>Ver más</span>
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <button class="circulo-nav oficios-flecha oficios-flecha--next" type="button" id="oficiosNext" aria-label="Ver curso siguiente">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+
+    <div class="oficios-dots" id="oficiosDots" aria-label="Seleccionar curso">
+      <button class="activo" type="button" data-indice="0" aria-label="Ver curso 1"></button>
+      <button type="button" data-indice="1" aria-label="Ver curso 2"></button>
+      <button type="button" data-indice="2" aria-label="Ver curso 3"></button>
     </div>
 
   </div>
@@ -254,7 +270,7 @@
 <section class="seccion materiales" id="materiales" aria-labelledby="materialesTitulo">
   <div class="envoltura materiales__inner">
     <header class="materiales__header">
-      <span class="ojo seccion-eyebrow reveal">04 — Materiales</span>
+      <span class="ojo seccion-eyebrow reveal">— Materiales</span>
       <h3 class="titulo-display seccion-titulo reveal" id="materialesTitulo">Los materiales que dan vida a cada restauración</h3>
       <p class="materiales__intro reveal">No todas las maderas envejecen igual. Su veta, densidad y comportamiento definen la manera en que una pieza debe ser restaurada. Conocer el material es comprender el mueble desde su origen.</p>
     </header>
@@ -323,7 +339,7 @@
 <section class="seccion capsula" id="capsula">
   <div class="envoltura capsula-contenido">
     <div class="capsula-cabecera">
-      <span class="ojo seccion-eyebrow reveal">05 — Próximamente</span>
+      <span class="ojo seccion-eyebrow reveal">— Próximamente</span>
       <h2 class="titulo-display seccion-titulo reveal">Muebles cápsula</h2>
       <p class="capsula-bajada reveal">Un adelanto de lo que viene: una primera mirada a nuestra próxima línea de piezas únicas, ensambladas desde fragmentos que ya no tenían arreglo. Cada una, irrepetible.
     </div>
@@ -453,7 +469,7 @@
     <div class="cta-contacto__overlay"></div>
   </div>
   <div class="cta-contacto__form-panel">
-    <h2 class="titulo-display cta-contacto__titulo">MANDANOS LOS DETALLES DE TU MUEBLE<br>Y EMPEZAMOS EL DIAGNÓSTICO</h2>
+    <h2 class="titulo-display cta-contacto__titulo">MANDANOS LOS DETALLES DE TU<br>MUEBLE Y EMPEZAMOS EL DIAGNÓSTICO</h2>
     <form class="cta-contacto__form" id="form-contacto" novalidate>
       <div class="cta-contacto__campo">
         <label for="nombre">Nombre</label>

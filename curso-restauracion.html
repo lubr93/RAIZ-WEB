@@ -177,45 +177,61 @@
     <h2 class="seccion-titulo-f reveal">Antes y después</h2>
     <p class="casos-bajada reveal">El resultado de aplicar el proceso completo, pieza por pieza. <br>Trabajos de alumnos, de diagnóstico a terminación.<br></p>
 
-    <div class="casos-grid">
-      <article class="caso-card reveal" style="--i:0">
-        <div class="caso-slider" data-before-after>
-          <img class="caso-slider-img caso-slider-img--antes" src="assets/images/sillathonet1.png" alt="Silla thonet antes de la restauración" onerror="this.style.display='none'">
-          <div class="caso-slider-despues">
-            <img class="caso-slider-img" src="assets/images/sillathonet2.png" alt="Silla thonet después de la restauración" onerror="this.style.display='none'">
-          </div>
-          <span class="caso-tag caso-tag--antes">ANTES</span>
-          <span class="caso-tag caso-tag--despues">DESPUÉS</span>
-          <button class="caso-slider-handle" type="button" aria-label="Arrastrar comparación antes y después"><span aria-hidden="true">&lt;-&gt;</span></button>
-        </div>
-        <p class="caso-caption">Silla Thonet - Martín, cohorte 2025</p>
-      </article>
+    <div class="casos-carousel">
+      <button class="circulo-nav casos-flecha casos-flecha--prev" type="button" id="casosPrev" aria-label="Ver caso anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
 
-      <article class="caso-card reveal" style="--i:1">
-        <div class="caso-slider" data-before-after>
-          <img class="caso-slider-img caso-slider-img--antes" src="assets/images/mesadeluz1.png" alt="Mesa de luz clásica antes de la restauración" onerror="this.style.display='none'">
-          <div class="caso-slider-despues">
-            <img class="caso-slider-img" src="assets/images/mesadeluz2.png" alt="Mesa de luz clásica después de la restauración" onerror="this.style.display='none'">
+      <div class="casos-grid" id="casosGrid">
+        <article class="caso-card reveal" style="--i:0">
+          <div class="caso-slider" data-before-after>
+            <img class="caso-slider-img caso-slider-img--antes" src="assets/images/sillathonet1.png" alt="Silla thonet antes de la restauración" onerror="this.style.display='none'">
+            <div class="caso-slider-despues">
+              <img class="caso-slider-img" src="assets/images/sillathonet2.png" alt="Silla thonet después de la restauración" onerror="this.style.display='none'">
+            </div>
+            <span class="caso-tag caso-tag--antes">ANTES</span>
+            <span class="caso-tag caso-tag--despues">DESPUÉS</span>
+            <button class="caso-slider-handle" type="button" aria-label="Arrastrar comparación antes y después"><span aria-hidden="true">&lt;-&gt;</span></button>
           </div>
-          <span class="caso-tag caso-tag--antes">ANTES</span>
-          <span class="caso-tag caso-tag--despues">DESPUÉS</span>
-          <button class="caso-slider-handle" type="button" aria-label="Arrastrar comparación antes y después"><span aria-hidden="true">&lt;-&gt;</span></button>
-        </div>
-        <p class="caso-caption">Mesa de luz clásica - Mariana, cohorte 2025</p>
-      </article>
+          <p class="caso-caption">Silla Thonet - Martín, cohorte 2025</p>
+        </article>
 
-      <article class="caso-card reveal" style="--i:2">
-        <div class="caso-slider" data-before-after>
-          <img class="caso-slider-img caso-slider-img--antes" src="assets/images/sillon1.png" alt="Sillon capitone antes de la restauración" onerror="this.style.display='none'">
-          <div class="caso-slider-despues">
-            <img class="caso-slider-img" src="assets/images/sillon2.png" alt="Sillon capitone después de la restauración" onerror="this.style.display='none'">
+        <article class="caso-card reveal" style="--i:1">
+          <div class="caso-slider" data-before-after>
+            <img class="caso-slider-img caso-slider-img--antes" src="assets/images/mesadeluz1.png" alt="Mesa de luz clásica antes de la restauración" onerror="this.style.display='none'">
+            <div class="caso-slider-despues">
+              <img class="caso-slider-img" src="assets/images/mesadeluz2.png" alt="Mesa de luz clásica después de la restauración" onerror="this.style.display='none'">
+            </div>
+            <span class="caso-tag caso-tag--antes">ANTES</span>
+            <span class="caso-tag caso-tag--despues">DESPUÉS</span>
+            <button class="caso-slider-handle" type="button" aria-label="Arrastrar comparación antes y después"><span aria-hidden="true">&lt;-&gt;</span></button>
           </div>
-          <span class="caso-tag caso-tag--antes">ANTES</span>
-          <span class="caso-tag caso-tag--despues">DESPUÉS</span>
-          <button class="caso-slider-handle" type="button" aria-label="Arrastrar comparación antes y después"><span aria-hidden="true">&lt;-&gt;</span></button>
-        </div>
-        <p class="caso-caption">Sillón capitoné - Federico, cohorte 2025</p>
-      </article>
+          <p class="caso-caption">Mesa de luz clásica - Mariana, cohorte 2025</p>
+        </article>
+
+        <article class="caso-card reveal" style="--i:2">
+          <div class="caso-slider" data-before-after>
+            <img class="caso-slider-img caso-slider-img--antes" src="assets/images/sillon1.png" alt="Sillon capitone antes de la restauración" onerror="this.style.display='none'">
+            <div class="caso-slider-despues">
+              <img class="caso-slider-img" src="assets/images/sillon2.png" alt="Sillon capitone después de la restauración" onerror="this.style.display='none'">
+            </div>
+            <span class="caso-tag caso-tag--antes">ANTES</span>
+            <span class="caso-tag caso-tag--despues">DESPUÉS</span>
+            <button class="caso-slider-handle" type="button" aria-label="Arrastrar comparación antes y después"><span aria-hidden="true">&lt;-&gt;</span></button>
+          </div>
+          <p class="caso-caption">Sillón capitoné - Federico, cohorte 2025</p>
+        </article>
+      </div>
+
+      <button class="circulo-nav casos-flecha casos-flecha--next" type="button" id="casosNext" aria-label="Ver caso siguiente">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+
+    <div class="casos-dots" id="casosDots" aria-label="Seleccionar caso">
+      <button class="activo" type="button" data-indice="0" aria-label="Ver caso 1"></button>
+      <button type="button" data-indice="1" aria-label="Ver caso 2"></button>
+      <button type="button" data-indice="2" aria-label="Ver caso 3"></button>
     </div>
   </div>
 </section>
@@ -234,63 +250,63 @@
       <button class="alumno-card alumno-card--claro" type="button" data-texto="Entré sin saber nada de restauración y salí con un sillón que restauré yo misma, de punta a punta." data-nombre="Mariana S." data-rol="Alumna, cohorte 2025">
         <span class="alumno-estrellas" aria-label="5 estrellas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg></span>
         <blockquote>Entré sin saber nada de restauración y salí con un sillón que restauré yo misma, de punta a punta.</blockquote>
-        <span class="alumno-meta"><span class="alumno-meta__avatar"><img src="assets/images/persona1.png" alt=""></span><span class="alumno-meta__texto"><strong>Mariana S.</strong><span>Alumna, cohorte 2025</span></span></span>
+        <span class="alumno-meta"><span class="alumno-meta__avatar"><img src="assets/images/alumno1.png" alt=""></span><span class="alumno-meta__texto"><strong>Mariana S.</strong><span>Alumna, cohorte 2025</span></span></span>
       </button>
       <button class="alumno-card alumno-card--crudo" type="button" data-texto="El acompañamiento en el taller fue clave — nunca sentí que estaba sola frente a la pieza." data-nombre="Lucía R." data-rol="Alumna, cohorte 2025">
         <span class="alumno-estrellas" aria-label="5 estrellas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg></span>
         <blockquote>El acompañamiento en el taller fue clave — nunca sentí que estaba sola frente a la pieza.</blockquote>
-        <span class="alumno-meta"><span class="alumno-meta__avatar"><img src="assets/images/persona2.png" alt=""></span><span class="alumno-meta__texto"><strong>Lucía R.</strong><span>Alumna, cohorte 2025</span></span></span>
+        <span class="alumno-meta"><span class="alumno-meta__avatar"><img src="assets/images/alumno2.png" alt=""></span><span class="alumno-meta__texto"><strong>Lucía R.</strong><span>Alumna, cohorte 2025</span></span></span>
       </button>
       <button class="alumno-card alumno-card--claro" type="button" data-texto="Terminé el curso con más que una técnica: con un criterio propio para mirar cualquier mueble." data-nombre="Federico T." data-rol="Alumno, cohorte 2025">
         <span class="alumno-estrellas" aria-label="5 estrellas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg></span>
         <blockquote>Terminé el curso con más que una técnica: con un criterio propio para mirar cualquier mueble.</blockquote>
-        <span class="alumno-meta"><span class="alumno-meta__avatar"><img src="assets/images/persona1.png" alt=""></span><span class="alumno-meta__texto"><strong>Federico T.</strong><span>Alumno, cohorte 2025</span></span></span>
+        <span class="alumno-meta"><span class="alumno-meta__avatar"><img src="assets/images/alumno3.png" alt=""></span><span class="alumno-meta__texto"><strong>Federico T.</strong><span>Alumno, cohorte 2025</span></span></span>
       </button>
       <button class="alumno-card alumno-card--crudo" type="button" data-texto="No esperaba que un curso de restauración me enseñara tanto sobre paciencia. La estructura del mueble te obliga a ir despacio." data-nombre="Camila V." data-rol="Alumna, cohorte 2025">
         <span class="alumno-estrellas" aria-label="5 estrellas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg></span>
         <blockquote>No esperaba que un curso de restauración me enseñara tanto sobre paciencia. La estructura del mueble te obliga a ir despacio.</blockquote>
-        <span class="alumno-meta"><span class="alumno-meta__avatar"><img src="assets/images/persona2.png" alt=""></span><span class="alumno-meta__texto"><strong>Camila V.</strong><span>Alumna, cohorte 2025</span></span></span>
+        <span class="alumno-meta"><span class="alumno-meta__avatar"><img src="assets/images/alumno4.png" alt=""></span><span class="alumno-meta__texto"><strong>Camila V.</strong><span>Alumna, cohorte 2025</span></span></span>
       </button>
       <button class="alumno-card alumno-card--claro" type="button" data-texto="Llegué pensando en lijar y barnizar, y terminé entendiendo de maderas, uniones, tapizados. Fue mucho más de lo que imaginé." data-nombre="Martín P." data-rol="Alumno, cohorte 2025">
         <span class="alumno-estrellas" aria-label="5 estrellas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg></span>
         <blockquote>Llegué pensando en lijar y barnizar, y terminé entendiendo de maderas, uniones, tapizados. Fue mucho más de lo que imaginé.</blockquote>
-        <span class="alumno-meta"><span class="alumno-meta__avatar"><img src="assets/images/persona1.png" alt=""></span><span class="alumno-meta__texto"><strong>Martín P.</strong><span>Alumno, cohorte 2025</span></span></span>
+        <span class="alumno-meta"><span class="alumno-meta__avatar"><img src="assets/images/alumno5.png" alt=""></span><span class="alumno-meta__texto"><strong>Martín P.</strong><span>Alumno, cohorte 2025</span></span></span>
       </button>
       <button class="alumno-card alumno-card--crudo" type="button" data-texto="Traje una silla de mi abuela que nadie se animaba a tocar. Hoy está en mi living y la uso todos los días." data-nombre="Julia M." data-rol="Alumna, cohorte 2025">
         <span class="alumno-estrellas" aria-label="5 estrellas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg></span>
         <blockquote>Traje una silla de mi abuela que nadie se animaba a tocar. Hoy está en mi living y la uso todos los días.</blockquote>
-        <span class="alumno-meta"><span class="alumno-meta__avatar"><img src="assets/images/persona2.png" alt=""></span><span class="alumno-meta__texto"><strong>Julia M.</strong><span>Alumna, cohorte 2025</span></span></span>
+        <span class="alumno-meta"><span class="alumno-meta__avatar"><img src="assets/images/alumno6.png" alt=""></span><span class="alumno-meta__texto"><strong>Julia M.</strong><span>Alumna, cohorte 2025</span></span></span>
       </button>
 
       <button class="alumno-card alumno-card--claro" type="button" data-texto="Entré sin saber nada de restauración y salí con un sillón que restauré yo misma, de punta a punta." data-nombre="Mariana S." data-rol="Alumna, cohorte 2025" aria-hidden="true" tabindex="-1">
         <span class="alumno-estrellas" aria-label="5 estrellas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg></span>
         <blockquote>Entré sin saber nada de restauración y salí con un sillón que restauré yo misma, de punta a punta.</blockquote>
-        <span class="alumno-meta"><span class="alumno-meta__avatar"><img src="assets/images/persona1.png" alt=""></span><span class="alumno-meta__texto"><strong>Mariana S.</strong><span>Alumna, cohorte 2025</span></span></span>
+        <span class="alumno-meta"><span class="alumno-meta__avatar"><img src="assets/images/alumno1.png" alt=""></span><span class="alumno-meta__texto"><strong>Mariana S.</strong><span>Alumna, cohorte 2025</span></span></span>
       </button>
       <button class="alumno-card alumno-card--crudo" type="button" data-texto="El acompañamiento en el taller fue clave — nunca sentí que estaba sola frente a la pieza." data-nombre="Lucía R." data-rol="Alumna, cohorte 2025" aria-hidden="true" tabindex="-1">
         <span class="alumno-estrellas" aria-label="5 estrellas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg></span>
         <blockquote>El acompañamiento en el taller fue clave — nunca sentí que estaba sola frente a la pieza.</blockquote>
-        <span class="alumno-meta"><span class="alumno-meta__avatar"><img src="assets/images/persona2.png" alt=""></span><span class="alumno-meta__texto"><strong>Lucía R.</strong><span>Alumna, cohorte 2025</span></span></span>
+        <span class="alumno-meta"><span class="alumno-meta__avatar"><img src="assets/images/alumno2.png" alt=""></span><span class="alumno-meta__texto"><strong>Lucía R.</strong><span>Alumna, cohorte 2025</span></span></span>
       </button>
       <button class="alumno-card alumno-card--claro" type="button" data-texto="Terminé el curso con más que una técnica: con un criterio propio para mirar cualquier mueble." data-nombre="Federico T." data-rol="Alumno, cohorte 2025" aria-hidden="true" tabindex="-1">
         <span class="alumno-estrellas" aria-label="5 estrellas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg></span>
         <blockquote>Terminé el curso con más que una técnica: con un criterio propio para mirar cualquier mueble.</blockquote>
-        <span class="alumno-meta"><span class="alumno-meta__avatar"><img src="assets/images/persona1.png" alt=""></span><span class="alumno-meta__texto"><strong>Federico T.</strong><span>Alumno, cohorte 2025</span></span></span>
+        <span class="alumno-meta"><span class="alumno-meta__avatar"><img src="assets/images/alumno3.png" alt=""></span><span class="alumno-meta__texto"><strong>Federico T.</strong><span>Alumno, cohorte 2025</span></span></span>
       </button>
       <button class="alumno-card alumno-card--crudo" type="button" data-texto="No esperaba que un curso de restauración me enseñara tanto sobre paciencia. La estructura del mueble te obliga a ir despacio." data-nombre="Camila V." data-rol="Alumna, cohorte 2025" aria-hidden="true" tabindex="-1">
         <span class="alumno-estrellas" aria-label="5 estrellas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg></span>
         <blockquote>No esperaba que un curso de restauración me enseñara tanto sobre paciencia. La estructura del mueble te obliga a ir despacio.</blockquote>
-        <span class="alumno-meta"><span class="alumno-meta__avatar"><img src="assets/images/persona2.png" alt=""></span><span class="alumno-meta__texto"><strong>Camila V.</strong><span>Alumna, cohorte 2025</span></span></span>
+        <span class="alumno-meta"><span class="alumno-meta__avatar"><img src="assets/images/alumno4.png" alt=""></span><span class="alumno-meta__texto"><strong>Camila V.</strong><span>Alumna, cohorte 2025</span></span></span>
       </button>
       <button class="alumno-card alumno-card--claro" type="button" data-texto="Llegué pensando en lijar y barnizar, y terminé entendiendo de maderas, uniones, tapizados. Fue mucho más de lo que imaginé." data-nombre="Martín P." data-rol="Alumno, cohorte 2025" aria-hidden="true" tabindex="-1">
         <span class="alumno-estrellas" aria-label="5 estrellas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg></span>
         <blockquote>Llegué pensando en lijar y barnizar, y terminé entendiendo de maderas, uniones, tapizados. Fue mucho más de lo que imaginé.</blockquote>
-        <span class="alumno-meta"><span class="alumno-meta__avatar"><img src="assets/images/persona1.png" alt=""></span><span class="alumno-meta__texto"><strong>Martín P.</strong><span>Alumno, cohorte 2025</span></span></span>
+        <span class="alumno-meta"><span class="alumno-meta__avatar"><img src="assets/images/alumno5.png" alt=""></span><span class="alumno-meta__texto"><strong>Martín P.</strong><span>Alumno, cohorte 2025</span></span></span>
       </button>
       <button class="alumno-card alumno-card--crudo" type="button" data-texto="Traje una silla de mi abuela que nadie se animaba a tocar. Hoy está en mi living y la uso todos los días." data-nombre="Julia M." data-rol="Alumna, cohorte 2025" aria-hidden="true" tabindex="-1">
         <span class="alumno-estrellas" aria-label="5 estrellas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2-4.6-4.4 6.3-.9L12 2.8z"/></svg></span>
         <blockquote>Traje una silla de mi abuela que nadie se animaba a tocar. Hoy está en mi living y la uso todos los días.</blockquote>
-        <span class="alumno-meta"><span class="alumno-meta__avatar"><img src="assets/images/persona2.png" alt=""></span><span class="alumno-meta__texto"><strong>Julia M.</strong><span>Alumna, cohorte 2025</span></span></span>
+        <span class="alumno-meta"><span class="alumno-meta__avatar"><img src="assets/images/alumno6.png" alt=""></span><span class="alumno-meta__texto"><strong>Julia M.</strong><span>Alumna, cohorte 2025</span></span></span>
       </button>
     </div>
   </div>
@@ -369,7 +385,7 @@
       <div class="faq__item" data-open="false">
         <button class="faq__question" aria-expanded="false" aria-controls="faq-answer-1" id="faq-question-1">
           ¿Necesito experiencia previa en restauración?
-          <span class="faq__icon" aria-hidden="true"></span>
+          <span class="faq__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
         </button>
         <div class="faq__answer-wrap" id="faq-answer-1" role="region" aria-labelledby="faq-question-1">
           <p class="faq__answer">No. El primer módulo cubre herramientas, materiales y lectura del mueble antes de tocar madera. Si ya restauraste antes, vas a avanzar más rápido en las etapas iniciales, pero no es un requisito para anotarte.</p>
@@ -379,7 +395,7 @@
       <div class="faq__item" data-open="false">
         <button class="faq__question" aria-expanded="false" aria-controls="faq-answer-2" id="faq-question-2">
           ¿Cuánto dura y cómo se organiza la cursada?
-          <span class="faq__icon" aria-hidden="true"></span>
+          <span class="faq__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
         </button>
         <div class="faq__answer-wrap" id="faq-answer-2" role="region" aria-labelledby="faq-question-2">
           <p class="faq__answer">Son 8 semanas divididas en 4 módulos, uno por cada etapa del proceso: diagnosticar, desarmar y reparar, reconstruir y diseñar, y terminación. Cada módulo combina clase práctica en taller con trabajo sobre tu propia pieza.</p>
@@ -389,7 +405,7 @@
       <div class="faq__item" data-open="false">
         <button class="faq__question" aria-expanded="false" aria-controls="faq-answer-3" id="faq-question-3">
           ¿Tengo que llevar mis propias herramientas?
-          <span class="faq__icon" aria-hidden="true"></span>
+          <span class="faq__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
         </button>
         <div class="faq__answer-wrap" id="faq-answer-3" role="region" aria-labelledby="faq-question-3">
           <p class="faq__answer">No. El taller provee todas las herramientas y la mayoría de los materiales de base. Si querés traer las tuyas para familiarizarte con tu propio equipo, también podés.</p>
@@ -399,7 +415,7 @@
       <div class="faq__item" data-open="false">
         <button class="faq__question" aria-expanded="false" aria-controls="faq-answer-4" id="faq-question-4">
           ¿Qué mueble voy a restaurar durante el curso?
-          <span class="faq__icon" aria-hidden="true"></span>
+          <span class="faq__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
         </button>
         <div class="faq__answer-wrap" id="faq-answer-4" role="region" aria-labelledby="faq-question-4">
           <p class="faq__answer">Vos elegís la pieza al inscribirte, con nuestro visto bueno según su complejidad. Va a ser tu proyecto final: pasa por las cuatro etapas del proceso y te la llevás terminada al finalizar el curso.</p>
@@ -409,7 +425,7 @@
       <div class="faq__item" data-open="false">
         <button class="faq__question" aria-expanded="false" aria-controls="faq-answer-5" id="faq-question-5">
           ¿Dónde se dictan las clases?
-          <span class="faq__icon" aria-hidden="true"></span>
+          <span class="faq__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
         </button>
         <div class="faq__answer-wrap" id="faq-answer-5" role="region" aria-labelledby="faq-question-5">
           <p class="faq__answer">Todo el cursado es presencial en nuestro taller. Es un curso de trabajo manual sobre pieza real, así que no tiene modalidad virtual.</p>
@@ -419,7 +435,7 @@
       <div class="faq__item" data-open="false">
         <button class="faq__question" aria-expanded="false" aria-controls="faq-answer-6" id="faq-question-6">
           ¿Recibo un certificado al terminar?
-          <span class="faq__icon" aria-hidden="true"></span>
+          <span class="faq__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
         </button>
         <div class="faq__answer-wrap" id="faq-answer-6" role="region" aria-labelledby="faq-question-6">
           <p class="faq__answer">Sí, entregamos certificado de finalización una vez completado el proyecto final. Además, tu pieza terminada queda documentada en fotos de antes y después para que la sumes a tu portfolio.</p>

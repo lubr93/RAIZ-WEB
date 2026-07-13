@@ -9,7 +9,7 @@
   min-height: 100vh;
   padding-top: 7rem;
   padding-bottom: var(--espacio-l);
-  background: url("assets/images/hero2.png") center top / cover no-repeat;
+  background: url("assets/images/hero-2.png") center top / cover no-repeat;
 }
 .curso-hero-grid{
   display: grid;
@@ -503,10 +503,20 @@
   margin-top: var(--espacio-m);
   margin-bottom: var(--espacio-m);
 }
+.casos-carousel{
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.casos-flecha,
+.casos-dots{
+  display: none;
+}
 .casos-grid{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--espacio-m);
+  width: 100%;
 }
 .caso-card{ transition-delay: calc(var(--i, 0) * 90ms); }
 .caso-slider{
@@ -907,39 +917,33 @@
 
 .faq__icon {
   flex-shrink: 0;
-  width: 20px;
-  height: 20px;
-  position: relative;
+  width: 2.4rem;
+  height: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1.5px solid var(--nogal);
+  color: var(--nogal);
+  transition: transform var(--t-rapida), background var(--t-media), border-color var(--t-media), color var(--t-media);
 }
 
-.faq__icon::before,
-.faq__icon::after {
-  content: "";
-  position: absolute;
-  background: currentColor;
-  top: 50%;
-  left: 50%;
-  transition: transform 0.3s ease;
+.faq__icon svg {
+  width: 1rem;
+  height: 1rem;
 }
 
-.faq__icon::before {
-  width: 14px;
-  height: 1.5px;
-  transform: translate(-50%, -50%);
+.faq__item:hover .faq__icon,
+.faq__question:focus-visible .faq__icon {
+  border-color: var(--terracota);
+  color: var(--terracota);
 }
 
-.faq__icon::after {
-  width: 1.5px;
-  height: 14px;
-  transform: translate(-50%, -50%);
-}
-
-.faq__item[data-open="true"] .faq__icon::after {
-  transform: translate(-50%, -50%) rotate(90deg) scaleY(0);
-}
-
-.faq__item[data-open="true"] .faq__icon::before {
-  transform: translate(-50%, -50%) rotate(180deg);
+.faq__item[data-open="true"] .faq__icon {
+  transform: rotate(180deg);
+  background: var(--terracota);
+  border-color: var(--terracota);
+  color: var(--hueso);
 }
 
 .faq__answer-wrap {
@@ -1062,7 +1066,49 @@
   .proceso-etapa{ grid-template-columns: 3rem 1fr; }
   .proceso-etapa-desc{ grid-column: 1 / -1; text-align: left; padding-top: .4rem; }
   .capacidades-grid{ grid-template-columns: repeat(2, 1fr); }
-  .casos-grid{ grid-template-columns: 1fr; }
+  .casos-carousel{
+    gap: .75rem;
+  }
+  .casos-flecha,
+  .casos-dots{
+    display: flex;
+  }
+  .casos-grid{
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 1.2rem;
+    max-width: 32rem;
+    margin-inline: auto;
+  }
+  .casos-grid::-webkit-scrollbar{
+    display: none;
+  }
+  .casos-grid .caso-card{
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+  }
+  .casos-dots{
+    justify-content: center;
+    gap: .38rem;
+    margin-top: var(--espacio-m);
+  }
+  .casos-dots button{
+    width: .34rem;
+    height: .34rem;
+    border-radius: 50%;
+    background: var(--negro-suave);
+    opacity: .45;
+    transition: width var(--t-rapida), opacity var(--t-rapida), background var(--t-rapida);
+  }
+  .casos-dots button.activo{
+    width: 1rem;
+    border-radius: 999px;
+    opacity: 1;
+    background: var(--naranja);
+  }
   .caso-slider{ aspect-ratio: 4/3; }
   .alumno-card{
     flex-basis: min(72vw, 22rem);
@@ -1080,7 +1126,20 @@
   /* nuevas secciones */
   .proceso-etapa{ grid-template-columns: 2.5rem 1fr; padding: 1.2rem 0; }
   .capacidades-grid{ grid-template-columns: 1fr; }
-  .casos-grid{ grid-template-columns: 1fr; }
+  .casos-carousel{
+    gap: .6rem;
+  }
+  .casos-grid{
+    max-width: 100%;
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+  .casos-flecha{
+    width: 2.25rem;
+    height: 2.25rem;
+    flex-shrink: 0;
+  }
+  .caso-slider{ aspect-ratio: 2/3; }
   .alumnos .seccion-titulo-f span{
     white-space: normal;
   }
@@ -1104,4 +1163,3 @@
     grid-template-columns: 1fr;
   }
 }
-
