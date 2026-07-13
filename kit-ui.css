@@ -37,8 +37,10 @@
   z-index: 20;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: var(--espacio-xs) var(--espacio-m);
-  padding: var(--espacio-s) clamp(1.25rem, 8vw, 10rem);
+  padding-block: var(--espacio-s);
+  padding-inline: clamp(2rem, 6vw, 8rem);
   background: color-mix(in srgb, var(--color-hueso) 92%, transparent);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid color-mix(in srgb, var(--color-nogal) 12%, transparent);
@@ -279,7 +281,10 @@
 @media (max-width: 720px){
   .kit-nav{
     top: 0;
-    padding-inline: var(--espacio-s);
+    justify-content: flex-start;
+    padding-inline: var(--espacio-m);
+    overflow-x: auto;
+    flex-wrap: nowrap;
   }
   .kit-escala-fila{ grid-template-columns: 5.5rem 1fr; }
   .kit-cards-grid{ grid-template-columns: 1fr; }
