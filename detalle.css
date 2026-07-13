@@ -836,6 +836,14 @@
   object-fit: cover;
   display: block;
   opacity: 0.92;
+  transform: none;
+  transition: none;
+}
+
+.faq__media img:hover,
+.faq__media img:focus,
+.faq:has(.faq__item[data-open="true"]) .faq__media img {
+  transform: none;
 }
 
 .faq__content {
