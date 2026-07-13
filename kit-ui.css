@@ -175,6 +175,14 @@
   color: color-mix(in srgb, var(--color-negro) 55%, transparent);
   margin-bottom: -.4rem;
 }
+.kit-boton-fondo-nogal{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-nogal);
+  border-radius: var(--radio-s);
+  padding: var(--espacio-s) var(--espacio-m);
+}
 /* ---------- FORMULARIO ---------- */
 .kit-form-real{
   width: min(100%, 42rem);

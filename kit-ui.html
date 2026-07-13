@@ -116,21 +116,6 @@
       </div>
     </div>
 
-    <p class="kit-seccion-desc reveal" style="margin-top: var(--espacio-l);">Alias semánticos: se usan en los componentes en lugar del color crudo, así todo el sitio cambia si se ajusta la paleta.</p>
-    <div class="kit-color-grid reveal-fila">
-      <div class="kit-color-card reveal" style="--i:0">
-        <div class="kit-color-swatch" style="background: var(--naranja);"></div>
-        <span class="kit-color-nombre">Naranja</span>
-        <span class="kit-color-var">--naranja / --terracota</span>
-        <span class="kit-color-hex">= color-terracota</span>
-      </div>
-      <div class="kit-color-card reveal" style="--i:1">
-        <div class="kit-color-swatch" style="background: var(--negro-suave);"></div>
-        <span class="kit-color-nombre">Negro suave</span>
-        <span class="kit-color-var">--negro-suave / --burdeos</span>
-        <span class="kit-color-hex">= color-nogal</span>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -221,6 +206,13 @@
     </div>
 
     <div class="kit-fila reveal-fila">
+      <span class="kit-etiqueta reveal" style="--i:0">Link de card / hover subrayado</span>
+      <div class="kit-boton-fondo-nogal reveal" style="--i:0">
+        <a href="#" class="capsula-card__cta">Ver historia completa</a>
+      </div>
+    </div>
+
+    <div class="kit-fila reveal-fila">
       <span class="kit-etiqueta reveal" style="--i:0">Navegación circular / menú</span>
       <button type="button" class="circulo-nav reveal" style="--i:0" aria-label="Ejemplo anterior">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
@@ -228,7 +220,13 @@
       <button type="button" class="circulo-nav reveal" style="--i:1" aria-label="Ejemplo siguiente">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
       </button>
-      <button type="button" class="menu-toggle reveal" style="--i:2; display:inline-flex;">
+      <button type="button" class="circulo-nav reveal" style="--i:2" aria-label="Ejemplo arriba">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+      </button>
+      <button type="button" class="circulo-nav reveal" style="--i:3" aria-label="Ejemplo abajo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <button type="button" class="menu-toggle reveal" style="--i:4; display:inline-flex;">
         <span>MENÚ</span>
       </button>
     </div>
